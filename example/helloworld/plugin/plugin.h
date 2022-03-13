@@ -5,7 +5,7 @@
 
 class i_app;
 
-PAP_DECLARE(plugin, i_plugin, "Mykhailo Didur", 1,
+PAP_DECLARE(plugin, i_plugin, "Mykhailo Didur", "0.0.1",
 {
 public:
     void setup(i_app* a) override;

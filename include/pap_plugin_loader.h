@@ -20,7 +20,7 @@ namespace pap
         InterfaceType* instance = NULL;
         function_p get_instance = NULL;
 
-        unsigned int version;
+        char* version;
         char* author;
     public:
         plugin_loader(std::string filename) {
@@ -33,7 +33,7 @@ namespace pap
             get_instance = (function_p)dlsym(dl_handler, get_instance_func_name.c_str());
             instance = (InterfaceType*)get_instance();
 
-            version = *((int*)dlsym(dl_handler, version_sym.c_str()));
+            version = (char*)dlsym(dl_handler, version_sym.c_str());
             author = (char*)dlsym(dl_handler, author_sym.c_str());
         }
 
@@ -41,8 +41,8 @@ namespace pap
             return instance;
         }
 
-        unsigned int get_version() {
-            return version;
+        std::string get_version() {
+            return std::string(version);
         }
 
         std::string get_author() {

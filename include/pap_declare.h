@@ -12,4 +12,4 @@ extern "C" pap_class_name* get_instance() \
     return &instance;\
 } \
 extern "C" const char author[] = pap_author; \
-extern "C" const unsigned int version = pap_version;
+extern "C" const char version[] = pap_version;
