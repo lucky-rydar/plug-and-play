@@ -8,8 +8,8 @@ class pap_class_name : public interface \
 pap_class_body; \
 extern "C" pap_class_name* get_instance() \
 { \
-    pap_class_name* instance = new pap_class_name(); \
-    return instance;\
+    static pap_class_name instance; \
+    return &instance;\
 } \
 extern "C" const char author[] = pap_author; \
 extern "C" const unsigned int version = pap_version;
