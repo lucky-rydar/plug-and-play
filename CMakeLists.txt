@@ -10,6 +10,10 @@ include_directories(
 
 add_subdirectory(lib/googletest)
 
+# example
+
+add_subdirectory(example)
+
 # tests
 
 add_executable(test
